@@ -8,11 +8,11 @@ class CountdownTimer {
 
   start() {
     this.selectRefs();
-    this.timerId = setInterval(() => {
+    const timerId = setInterval(() => {
       const currentDate = Date.now();
       const time = this.targetDate - currentDate;
       if (time < 0) {
-        clearInterval(this.timerId);
+        clearInterval(timerId);
         return console.log("Your date is ago!");
       }
       this.updateTimerFace(time);
@@ -66,6 +66,6 @@ class CountdownTimer {
   }
 }
 
-const newTimer = new CountdownTimer("#timer-1", new Date("Jan 17, 2020"));
+const newTimer = new CountdownTimer("#timer-1", new Date("Jan 11, 2020"));
 
 newTimer.start();
