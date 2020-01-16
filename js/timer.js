@@ -66,6 +66,9 @@ class CountdownTimer {
   }
 }
 
-const newTimer = new CountdownTimer("#timer-1", new Date("Jan 11, 2020"));
+const currentTime = Date.now();
+const clockTime = currentTime + 345600000;
+
+const newTimer = new CountdownTimer("#timer-1", new Date(clockTime));
 
 newTimer.start();
